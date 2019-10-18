@@ -69,14 +69,26 @@ if osvos_params.useGPU
 end
 
 end
-
+function res_img = resize2(im,scale)
+[m,n,c] = size(im);
+scale1= m*scale;
+scale2=n*scale;
+I=im;
+mm=floor(m/scale1);
+nn=floor(n/scale2);
+J=I;
+J=J(1:mm:end,1:nn:end);
+im = J;
+end 
 function data = prepare_data(im, gt, name)
 scales = [0.5 0.8 1];
 k=1;
 for jj=1:length(scales)
     % scale the images
-    im_sc = imresize(im, scales(jj)); data.im{k}=single(255*im_sc);
-    gt_sc = imresize(gt, scales(jj)); data.gt{k}=single(gt_sc); k=k+1;
+    %im_sc = imresize(im, scales(jj)); data.im{k}=single(255*im_sc);
+    %gt_sc = imresize(gt, scales(jj)); data.gt{k}=single(gt_sc); k=k+1;
+    im_sc = res_img(im, scales(jj)); data.im{k}=single(255*im_sc);
+    gt_sc = res_img(gt, scales(jj)); data.gt{k}=single(gt_sc); k=k+1;
     
     % flip the scaled images
     im_sc_fl = fliplr(im_sc); data.im{k} = single(255*im_sc_fl);
