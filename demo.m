@@ -1,6 +1,8 @@
 clear; close all; clc;
 addpath(genpath('src'));
 addpath(genpath('lib'));
+disp('osvos_root');
+disp(osvos_root);
 cd(osvos_root);
 
 % Set name and number of online training iters
