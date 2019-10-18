@@ -35,7 +35,7 @@ if ~exist(osvos_params.caffe_path,'dir')
 end
 
 addpath(osvos_params.caffe_path);
-caffe.reset_all();
+#caffe.reset_all();
 
 % Network  test model and weights
 osvos_params.test_model = fullfile(osvos_root,'models','deploy.prototxt');
