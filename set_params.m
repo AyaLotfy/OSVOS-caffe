@@ -69,7 +69,7 @@ if osvos_params.useGPU
 end
 
 end
-function res_img = resize2(im,scale)
+function J = res_img(im,scale)
 [m,n,c] = size(im);
 scale1= m*scale;
 scale2=n*scale;
@@ -78,7 +78,6 @@ mm=floor(m/scale1);
 nn=floor(n/scale2);
 J=I;
 J=J(1:mm:end,1:nn:end);
-im = J;
 end 
 function data = prepare_data(im, gt, name)
 scales = [0.5 0.8 1];
