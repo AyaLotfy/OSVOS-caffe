@@ -1,8 +1,6 @@
 clear; close all; clc;
 addpath(genpath('src'));
 addpath(genpath('lib'));
-disp('osvos_root');
-disp(osvos_root);
 cd(osvos_root);
 
 % Set name and number of online training iters
@@ -11,6 +9,8 @@ num_iters = 500; % set higher for better results (eg. 2000)
 
 % Set the OSVOS parameters.
 set_params(name);
+disp('I am back from the set_param file');
+
 
 % Train the model
 if osvos_params.useTrainOnline
