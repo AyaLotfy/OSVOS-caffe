@@ -8,7 +8,7 @@ if evalin('base','exist(''osvos_params'',''var'')')
     end
 end
 
-disp('Setting OSVOS parameters')
+disp('Setting OSVOS parameters');
 
 %% ATTENTION: Parameters to be modifed by the user
 
