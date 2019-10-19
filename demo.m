@@ -8,6 +8,7 @@ name = 'drift-chicane';
 num_iters = 500; % set higher for better results (eg. 2000)
 
 % Set the OSVOS parameters.
+disp('before calling set_param');
 set_params(name);
 disp('I am back from the set_param file');
 
